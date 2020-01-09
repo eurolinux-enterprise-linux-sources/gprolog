@@ -1,0 +1,223 @@
+gprolog (1.2.17-2) unstable; urgency=low
+
+  * src/src/configure.in, src/src/config.{sub,guess}: adapt to latest
+    versions and recognize wider range of designation for supported
+    architectures.
+  * debian/rules: in "clean" target: run autoconf when needed!
+  * src/src/TopComp/prolog_path.c: Search_Path(): look in PROLOG_BINDIR
+    first!
+  * debian/rules: *really* make sure we're using the locally generated
+    gplc & friends: it's critical when rebuilding the system...
+  * debian/rules: new target "config".
+
+ -- Salvador Abreu <spa@debian.org>  Mon, 17 Feb 2003 00:37:17 +0000
+
+gprolog (1.2.17-1) unstable; urgency=low
+
+  * New upstream release
+  * Updated Standards-Version to 3.5.8
+  * Restrict binary packages to known working architectures (i386, sparc,
+    mips, alpha, powerpc)
+  * Fixed postinst and prerm scripts to look for executables in the right
+    place.
+  * machine1.c: modified execvp() calls to try library directory first.
+  * configure.in, gp_config.h.in: added PROLOG_BINDIR and PROLOG_LIBDIR
+    constants (for above).
+  * top_comp.c: use PROLOG_LIBDIR to locate *.o files.
+  * Fixed library locations introduced in version 1.2.11-4, to adhere to
+    the scheme /usr/lib/gprolog-VARIANT/.  For now, VARIANT is only "iso"
+    but the "cx" (Contextual Logic Programming) packages are on the way...
+  * Lintian 1.22.6 approved :)
+
+ -- Salvador Abreu <spa@debian.org>  Thu, 13 Feb 2003 09:31:28 +0000
+
+gprolog (1.2.13-1) unstable; urgency=low
+
+  * new upstream version.
+
+ -- Salvador Abreu <spa@debian.org>  Sat,  4 May 2002 23:40:14 +0100
+
+gprolog (1.2.11-4) unstable; urgency=low
+
+  * new executable file locate in order to prepare to host several
+    variants of gprolog (eg. gprolog-cx) simultaneously.
+  * gprolog.postinst, gprolog.prerm: put #DEBHELPER# line AT THE END, just
+    in case things like update-menus, etc. fail.
+
+ -- Salvador Abreu <spa@debian.org>  Fri,  3 May 2002 11:22:11 +0100
+
+gprolog (1.2.11-3) unstable; urgency=medium
+
+  * merged fixes from upstream 1.2.12: allow for much larger memory sizes,
+    user settable via GLOBALSZ=NNN, etc.  NNN are Kbytes; see docs.
+  * configure for minimal hardware requirements (closes: #143406).
+
+ -- Salvador Abreu <spa@debian.org>  Thu, 18 Apr 2002 13:36:18 +0100
+
+gprolog (1.2.11-2) unstable; urgency=low
+
+  * REALLY fixed watermark code, this time!
+  * configure --with-c-flags=... instead of specifying in the `make'
+    command line: configure would think it could use machine registers
+    that, in fact, it shouldn't.
+
+ -- Salvador Abreu <spa@debian.org>  Tue, 26 Mar 2002 17:57:56 +0000
+
+gprolog (1.2.11-1) unstable; urgency=low
+
+  * new upstream version.
+  * doc/Makefile: hh_do_hhc_hhk is to be found here.  Patch courtesy of
+    Neal H Walfield <neal@cs.uml.edu> (closes: #139643)
+  * added build-dependencies on tetex-extra and gsfonts (closes: #139639)
+  * fix problem with watermark code introduced in 1.2.9.
+  * use autoconf >= 2.52.
+
+ -- Salvador Abreu <spa@debian.org>  Mon, 25 Mar 2002 13:47:05 +0000
+
+gprolog (1.2.9-3) unstable; urgency=low
+
+  * use M-q instead of C-u M-q in control (closes: #135231 >-)
+  * incorporate top_comp.c changes from 1.2.10.
+
+ -- Salvador Abreu <spa@debian.org>  Thu, 28 Feb 2002 22:21:08 +0000
+
+gprolog (1.2.9-2) unstable; urgency=low
+
+  * remove alternatives upon package deletion (closes: #127035)
+
+ -- Salvador Abreu <spa@debian.org>  Thu,  3 Jan 2002 16:34:19 +0000
+
+gprolog (1.2.9-1) unstable; urgency=low
+
+  * new upstream version.
+  * added --enable-watermark to provide for external destructors on
+    choicepoint deletion.
+  * wam2ma: fixed weirdness: dmalloc is no longer a build dependency.  fix
+    went upstream also. (closes: #126343)
+  * gprolog-doc: make sure *.html goes in the right place.
+
+ -- Salvador Abreu <spa@debian.org>  Mon, 24 Dec 2001 18:55:15 +0000
+
+gprolog (1.2.7-3) unstable; urgency=low
+
+  * clean up after calling mkstemp(2).  moved upstream into the CVS
+    archive. (closes: #114529)
+
+ -- Salvador Abreu <spa@debian.org>  Sun,  7 Oct 2001 14:46:17 +0100
+
+gprolog (1.2.7-2) unstable; urgency=low
+
+  * gprolog-doc is now in the "doc" distribution section.
+  * reworked doc-base stuff to properly deal with binary and documentation
+    packages. (closes: #114220)
+
+ -- Salvador Abreu <spa@debian.org>  Tue,  2 Oct 2001 21:17:42 +0100
+
+gprolog (1.2.7-1) unstable; urgency=low
+
+  * New maintainer. (closes: #71675)
+  * New upstream release.
+  * Added a menu entry and an icon.
+  * Split into two binary packages (gprolog and gprolog-doc).
+  * Complete rewrite of debian/rules.
+  * Fully rebuild docs everytime, produce HTML and PDF versions.
+  * Updated manpages.
+  * Linking wam2ma with dmalloc as regular mallocs seem to cause grief.
+  * New function Update_Water_Mark/2 in EnginePl/wam_inst.c, needed to
+    create external nondeterminate predicates which need to release
+    resources when a choice-point is deleted.
+  * lintian 1.20.14 approved.
+
+ -- Salvador Abreu <spa@debian.org>  Mon, 24 Sep 2001 15:57:15 +0100
+
+gprolog (1.2.1-1) unstable; urgency=low
+
+  * New upstream release.  (Closes:Bug#98347)
+  * Use doc-base.  (Closes:Bug#96025)
+  * Added a menu entry.  (Closes:Bug#83493)
+
+ -- Brent A. Fulgham <bfulgham@debian.org>  Mon, 24 Sep 2001 20:44:41 -0700
+
+gprolog (1.2.0-3) unstable; urgency=low
+
+  * Orphaned.
+
+ -- Milan Zamazal <pdm@debian.org>  Wed, 29 Aug 2001 10:58:15 +0200
+
+gprolog (1.2.0-2) unstable; urgency=low
+
+  * Call update-alternatives in prerm, not in postrm; closes: #74558.
+
+prolog (1.2.0-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Milan Zamazal <pdm@debian.org>  Sun, 30 Jul 2000 20:46:56 +0200
+
+gprolog (1.1.2-1) unstable; urgency=low
+
+  * New upstream version.
+  * Use .gz extension in links to the main manpage.
+  * Lintian 1.11.2 satisfied.
+
+ -- Milan Zamazal <pdm@debian.org>  Sun, 23 Jul 2000 12:16:49 +0200
+
+gprolog (1.1.0-4) frozen unstable; urgency=low
+
+  * Broken links to man pages in alternatives install fixed; closes: #57238.
+  * Do not install DVI version of the manual.
+  * Very simple man page created.
+
+ -- Milan Zamazal <pdm@debian.org>  Wed,  9 Feb 2000 20:48:06 +0100
+
+gprolog (1.1.0-3) unstable; urgency=low
+
+  * Standards 3.1.1.
+  * Build dependencies introduced.
+  * Download location fixed.
+  * Reference to GPL location on Debian fixed.
+  * Copyright updated.
+
+ -- Milan Zamazal <pdm@debian.org>  Sun,  5 Dec 1999 10:32:24 +0100
+
+gprolog (1.1.0-2) unstable; urgency=low
+
+  * Grr, move include and lib files to the proper location again;
+    closes: #48702.
+
+ -- Milan Zamazal <pdm@debian.org>  Sun, 31 Oct 1999 18:43:47 +0100
+
+gprolog (1.1.0-1) unstable; urgency=low
+
+  * New upstream version.
+  * More cleanups when cleaning.
+  * Lintian 1.10 satisfied.
+
+ -- Milan Zamazal <pdm@debian.org>  Sun, 24 Oct 1999 19:48:48 +0200
+
+gprolog (1.0.5-1) unstable; urgency=low
+
+  * New upstream version.
+    (This is a development version, but the 1.0.0 version does not compile
+    with gcc 2.95 and glibc 2.1 and the development version is suggested
+    for glibc 2.1 systems.)
+  * Moved to FHS.
+  * Compiled with glibc 2.1.
+  * Standards 3.0.1.
+  * Lintian 1.9.2 satisfied.
+
+ -- Milan Zamazal <pdm@debian.org>  Fri,  1 Oct 1999 21:31:19 +0200
+
+gprolog (1.0.0-2) unstable; urgency=low
+
+  * All GIFs removed from the binary package to avoid problems with bad
+    ideas.
+
+ -- Milan Zamazal <pdm@debian.org>  Mon, 30 Aug 1999 21:06:56 +0200
+
+gprolog (1.0.0-1) unstable; urgency=low
+
+  * Initial Release.
+  * Lintian 1.1 satisfied.
+
+ -- Milan Zamazal <pdm@debian.org>  Sun, 25 Apr 1999 16:07:35 +0200

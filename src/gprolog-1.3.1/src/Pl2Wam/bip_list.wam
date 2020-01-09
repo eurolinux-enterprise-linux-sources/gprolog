@@ -1,0 +1,4324 @@
+% compiler: GNU Prolog 1.3.1 (Feb 10 2009)
+% file    : bip_list.pl
+% date    : 2 10 2009
+% time    : 13:54:38
+
+
+file_name('/home/diaz/GP/src/src/Pl2Wam/bip_list.pl').
+
+
+predicate(bip/2,5,static,private,user,[
+    switch_on_term(62,1,fail,fail,fail),
+
+label(1),
+    switch_on_atom([(bagof,63),
+                    (setof,65),
+                    (findall,67),
+                    ((>=),69),
+                    ((<),71),
+                    ((>),73),
+                    ((=\=),75),
+                    ((=:=),77),
+                    ((is),79),
+                    ((=<),81),
+                    (retractall,83),
+                    (assertz,85),
+                    (asserta,87),
+                    (retract,89),
+                    (abolish,91),
+                    (clause,93),
+                    (char_code,95),
+                    (lower_upper,97),
+                    (current_atom,99),
+                    (name,101),
+                    (number_codes,103),
+                    (atom_codes,105),
+                    (atom_length,107),
+                    (atom_property,109),
+                    (number_chars,111),
+                    (new_atom,2),
+                    (number_atom,119),
+                    (atom_chars,121),
+                    (atom_concat,123),
+                    (atom_hash,125),
+                    (sub_atom,127),
+                    (call_det,129),
+                    (once,131),
+                    ((\+),133),
+                    (call,3),
+                    (call_with_args,4),
+                    (get_char,5),
+                    (get_code,6),
+                    (unget_byte,7),
+                    (put_char,8),
+                    (get_key,9),
+                    (peek_code,10),
+                    (put_code,11),
+                    (peek_char,12),
+                    (get_byte,13),
+                    (unget_char,14),
+                    (unget_code,15),
+                    (peek_byte,16),
+                    (put_byte,17),
+                    (get_key_no_echo,18),
+                    (write_canonical_to_atom,233),
+                    (write_term_to_chars,235),
+                    (write_term_to_codes,237),
+                    (write_to_atom,239),
+                    (display_to_atom,241),
+                    (display_to_codes,243),
+                    (read_term_from_atom,245),
+                    (print_to_atom,247),
+                    (read_term_from_codes,249),
+                    (write_term_to_atom,251),
+                    (write_to_codes,253),
+                    (display_to_chars,255),
+                    (print_to_codes,257),
+                    (read_token_from_atom,259),
+                    (read_token_from_chars,261),
+                    (read_from_atom,263),
+                    (read_from_codes,265),
+                    (read_from_chars,267),
+                    (write_canonical_to_codes,269),
+                    (write_to_chars,271),
+                    (print_to_chars,273),
+                    (read_token_from_codes,275),
+                    (write_canonical_to_chars,277),
+                    (writeq_to_atom,279),
+                    (writeq_to_codes,281),
+                    (writeq_to_chars,283),
+                    (read_term_from_chars,285),
+                    (format_to_atom,287),
+                    (format_to_codes,289),
+                    (format_to_chars,291),
+                    ('.',293),
+                    (consult,295),
+                    (listing,19),
+                    (load,301),
+                    (abort,303),
+                    (repeat,305),
+                    (stop,307),
+                    (halt,20),
+                    (for,313),
+                    (spypoint_condition,315),
+                    (nospy,317),
+                    (notrace,319),
+                    (debugging,321),
+                    (spy,323),
+                    (leash,325),
+                    (wam_debug,327),
+                    (nodebug,329),
+                    (trace,331),
+                    (debug,333),
+                    (nospyall,335),
+                    (told,337),
+                    (tab,339),
+                    (put,341),
+                    (seeing,343),
+                    (tell,345),
+                    (seen,347),
+                    (see,349),
+                    (append,21),
+                    (telling,353),
+                    (skip,355),
+                    (get,357),
+                    (get0,359),
+                    (expand_term,361),
+                    (phrase,22),
+                    (decompose_file_name,367),
+                    (absolute_file_name,369),
+                    (prolog_file_name,371),
+                    (read_pl_state_file,373),
+                    (argument_counter,375),
+                    (write_pl_state_file,377),
+                    (argument_value,379),
+                    (set_prolog_flag,381),
+                    (current_prolog_flag,383),
+                    (argument_list,385),
+                    (environ,387),
+                    (format,23),
+                    (g_test_set_bit,393),
+                    (g_inc,24),
+                    (g_deco,401),
+                    (g_assign,403),
+                    (g_assignb,405),
+                    (g_set_bit,407),
+                    (g_inco,409),
+                    (g_test_reset_bit,411),
+                    (g_reset_bit,413),
+                    (g_dec,25),
+                    (g_array_size,421),
+                    (g_read,423),
+                    (g_link,425),
+                    (add_linedit_completion,427),
+                    (find_linedit_completion,429),
+                    (get_linedit_prompt,431),
+                    (set_linedit_prompt,433),
+                    (reverse,435),
+                    (nth,437),
+                    (min_list,439),
+                    (permutation,441),
+                    (sum_list,443),
+                    (prefix,445),
+                    (last,447),
+                    (suffix,449),
+                    (sublist,451),
+                    (select,26),
+                    (delete,457),
+                    (memberchk,459),
+                    (length,461),
+                    (member,463),
+                    (max_list,465),
+                    (current_op,467),
+                    (op,469),
+                    (host_name,471),
+                    (directory_files,473),
+                    (exec,27),
+                    (working_directory,479),
+                    (file_exists,481),
+                    (temporary_file,483),
+                    (architecture,485),
+                    (wait,487),
+                    (delete_file,489),
+                    (change_directory,491),
+                    (date_time,493),
+                    (popen,497),
+                    (make_directory,499),
+                    (system,28),
+                    (unlink,505),
+                    (os_version,507),
+                    (create_pipe,509),
+                    (file_property,511),
+                    (delete_directory,513),
+                    (spawn,29),
+                    (sleep,519),
+                    (prolog_pid,521),
+                    (temporary_name,523),
+                    (shell,30),
+                    (rename_file,531),
+                    (file_permission,533),
+                    (send_signal,535),
+                    (fork_prolog,537),
+                    (current_bip_name,539),
+                    (set_bip_name,541),
+                    (syntax_error_info,543),
+                    (current_predicate,545),
+                    (predicate_property,547),
+                    (name_query_vars,549),
+                    (name_singleton_vars,551),
+                    (bind_variables,553),
+                    (numbervars,31),
+                    (portray_clause,32),
+                    (get_print_stream,563),
+                    (print,33),
+                    (get_seed,569),
+                    (set_seed,571),
+                    (randomize,573),
+                    (random,34),
+                    (char_conversion,579),
+                    (read_number,35),
+                    (read_token,36),
+                    (read_integer,37),
+                    (read_term,38),
+                    (current_char_conversion,597),
+                    (read_atom,39),
+                    (read,40),
+                    (last_read_start_line_column,607),
+                    (socket_close,609),
+                    (socket_bind,611),
+                    (socket_connect,613),
+                    (socket,615),
+                    (socket_accept,41),
+                    (hostname_address,621),
+                    (socket_listen,623),
+                    (keysort,42),
+                    (sort,43),
+                    (sort0,44),
+                    (sr_change_options,637),
+                    (sr_get_size_counters,639),
+                    (sr_open,641),
+                    (sr_current_descriptor,643),
+                    (sr_get_include_list,645),
+                    (sr_get_file_name,647),
+                    (sr_write_error,45),
+                    (sr_close,655),
+                    (sr_read_term,657),
+                    (sr_error_from_exception,659),
+                    (sr_get_error_counters,661),
+                    (sr_set_error_counters,663),
+                    (sr_get_stream,665),
+                    (sr_get_position,667),
+                    (sr_get_include_stream_list,669),
+                    (sr_new_pass,671),
+                    (sr_write_message,46),
+                    (sr_get_module,679),
+                    (system_time,681),
+                    (real_time,683),
+                    (statistics,47),
+                    (cpu_time,689),
+                    (user_time,691),
+                    (close,48),
+                    (stream_line_column,697),
+                    (stream_property,699),
+                    (open_input_codes_stream,701),
+                    (flush_output,49),
+                    (current_input,707),
+                    (seek,709),
+                    (set_stream_buffering,711),
+                    (open_input_chars_stream,713),
+                    (open_output_chars_stream,715),
+                    (close_input_chars_stream,717),
+                    (stream_position,719),
+                    (open_output_atom_stream,721),
+                    (close_input_atom_stream,723),
+                    (at_end_of_stream,50),
+                    (character_count,729),
+                    (open_input_atom_stream,731),
+                    (set_stream_type,733),
+                    (set_output,735),
+                    (add_stream_alias,737),
+                    (current_stream,739),
+                    (set_stream_eof_action,741),
+                    (set_input,743),
+                    (current_alias,745),
+                    (open_output_codes_stream,747),
+                    (line_position,749),
+                    (current_output,751),
+                    (line_count,753),
+                    (close_input_codes_stream,755),
+                    (open,51),
+                    (close_output_chars_stream,761),
+                    (close_output_codes_stream,763),
+                    (set_stream_line_column,765),
+                    (set_stream_position,767),
+                    (close_output_atom_stream,769),
+                    (current_mirror,771),
+                    (add_stream_mirror,773),
+                    (remove_stream_mirror,775),
+                    ((==),777),
+                    (functor,779),
+                    ((@>),781),
+                    (setarg,52),
+                    ((=..),787),
+                    (copy_term,789),
+                    (term_ref,791),
+                    (compare,793),
+                    ((@=<),795),
+                    ((\==),797),
+                    ((@>=),799),
+                    (arg,801),
+                    ((@<),803),
+                    (top_level,805),
+                    (break,807),
+                    (list_or_partial_list,809),
+                    (atomic,811),
+                    (number,813),
+                    (integer,815),
+                    (atom,817),
+                    (partial_list,819),
+                    (list,821),
+                    (var,823),
+                    (compound,825),
+                    (callable,827),
+                    (float,829),
+                    (nonvar,831),
+                    ((\=),833),
+                    ((=),835),
+                    (unify_with_occurs_check,837),
+                    (writeq,53),
+                    (write_canonical,54),
+                    (display,55),
+                    (nl,56),
+                    (write_term,57),
+                    (write,58),
+                    ((##),863),
+                    (fd_at_least_one,865),
+                    ((#\<=>),867),
+                    ((#/\),869),
+                    ((#\==>),871),
+                    (fd_only_one,873),
+                    ((#<=>),875),
+                    ((#\),877),
+                    ((#==>),879),
+                    ((#\/\),881),
+                    (fd_at_most_one,883),
+                    (fd_cardinality,59),
+                    ((#\/),889),
+                    ((#\\/),891),
+                    (fd_vector_max,893),
+                    (fd_size,895),
+                    (fd_has_extra_cstr,897),
+                    (fd_set_vector_max,899),
+                    (fd_min,901),
+                    (fd_dom,903),
+                    (fd_use_vector,905),
+                    (fd_max_integer,907),
+                    (fd_has_vector,909),
+                    (fd_max,911),
+                    ((#=),913),
+                    ((#>),915),
+                    ((#\=),917),
+                    ((#=<#),919),
+                    ((#>=#),921),
+                    ((#=<),923),
+                    ((#\=#),925),
+                    ((#>=),927),
+                    ((#<#),929),
+                    ((#=#),931),
+                    ((#>#),933),
+                    ((#<),935),
+                    (fd_minimize,937),
+                    (fd_maximize,939),
+                    (fd_prime,941),
+                    (fd_not_prime,943),
+                    (fd_relation,945),
+                    (fd_relationc,947),
+                    (fd_all_different,949),
+                    (fd_exactly,951),
+                    (fd_element_var,953),
+                    (fd_atleast,955),
+                    (fd_element,957),
+                    (fd_atmost,959),
+                    (fd_labelingff,961),
+                    (fd_domain_bool,963),
+                    (fd_domain,60),
+                    (fd_labeling,61),
+                    (fd_var,973),
+                    (generic_var,975),
+                    (non_generic_var,977),
+                    (non_fd_var,979)]),
+
+label(2),
+    try(113),
+    retry(115),
+    trust(117),
+
+label(3),
+    try(135),
+    retry(137),
+    retry(139),
+    retry(141),
+    retry(143),
+    retry(145),
+    retry(147),
+    retry(149),
+    retry(151),
+    trust(153),
+
+label(4),
+    try(155),
+    retry(157),
+    retry(159),
+    retry(161),
+    retry(163),
+    retry(165),
+    retry(167),
+    retry(169),
+    retry(171),
+    retry(173),
+    trust(175),
+
+label(5),
+    try(177),
+    trust(179),
+
+label(6),
+    try(181),
+    trust(183),
+
+label(7),
+    try(185),
+    trust(187),
+
+label(8),
+    try(189),
+    trust(191),
+
+label(9),
+    try(193),
+    trust(195),
+
+label(10),
+    try(197),
+    trust(199),
+
+label(11),
+    try(201),
+    trust(203),
+
+label(12),
+    try(205),
+    trust(207),
+
+label(13),
+    try(209),
+    trust(211),
+
+label(14),
+    try(213),
+    trust(215),
+
+label(15),
+    try(217),
+    trust(219),
+
+label(16),
+    try(221),
+    trust(223),
+
+label(17),
+    try(225),
+    trust(227),
+
+label(18),
+    try(229),
+    trust(231),
+
+label(19),
+    try(297),
+    trust(299),
+
+label(20),
+    try(309),
+    trust(311),
+
+label(21),
+    try(351),
+    trust(455),
+
+label(22),
+    try(363),
+    trust(365),
+
+label(23),
+    try(389),
+    trust(391),
+
+label(24),
+    try(395),
+    retry(397),
+    trust(399),
+
+label(25),
+    try(415),
+    retry(417),
+    trust(419),
+
+label(26),
+    try(453),
+    trust(495),
+
+label(27),
+    try(475),
+    trust(477),
+
+label(28),
+    try(501),
+    trust(503),
+
+label(29),
+    try(515),
+    trust(517),
+
+label(30),
+    try(525),
+    retry(527),
+    trust(529),
+
+label(31),
+    try(555),
+    trust(557),
+
+label(32),
+    try(559),
+    trust(561),
+
+label(33),
+    try(565),
+    trust(567),
+
+label(34),
+    try(575),
+    trust(577),
+
+label(35),
+    try(581),
+    trust(583),
+
+label(36),
+    try(585),
+    trust(587),
+
+label(37),
+    try(589),
+    trust(591),
+
+label(38),
+    try(593),
+    trust(595),
+
+label(39),
+    try(599),
+    trust(601),
+
+label(40),
+    try(603),
+    trust(605),
+
+label(41),
+    try(617),
+    trust(619),
+
+label(42),
+    try(625),
+    trust(627),
+
+label(43),
+    try(629),
+    trust(631),
+
+label(44),
+    try(633),
+    trust(635),
+
+label(45),
+    try(649),
+    retry(651),
+    trust(653),
+
+label(46),
+    try(673),
+    retry(675),
+    trust(677),
+
+label(47),
+    try(685),
+    trust(687),
+
+label(48),
+    try(693),
+    trust(695),
+
+label(49),
+    try(703),
+    trust(705),
+
+label(50),
+    try(725),
+    trust(727),
+
+label(51),
+    try(757),
+    trust(759),
+
+label(52),
+    try(783),
+    trust(785),
+
+label(53),
+    try(839),
+    trust(841),
+
+label(54),
+    try(843),
+    trust(845),
+
+label(55),
+    try(847),
+    trust(849),
+
+label(56),
+    try(851),
+    trust(853),
+
+label(57),
+    try(855),
+    trust(857),
+
+label(58),
+    try(859),
+    trust(861),
+
+label(59),
+    try(885),
+    trust(887),
+
+label(60),
+    try(965),
+    trust(967),
+
+label(61),
+    try(969),
+    trust(971),
+
+label(62),
+    try_me_else(64),
+
+label(63),
+    get_atom(bagof,0),
+    get_integer(3,1),
+    proceed,
+
+label(64),
+    retry_me_else(66),
+
+label(65),
+    get_atom(setof,0),
+    get_integer(3,1),
+    proceed,
+
+label(66),
+    retry_me_else(68),
+
+label(67),
+    get_atom(findall,0),
+    get_integer(3,1),
+    proceed,
+
+label(68),
+    retry_me_else(70),
+
+label(69),
+    get_atom(>=,0),
+    get_integer(2,1),
+    proceed,
+
+label(70),
+    retry_me_else(72),
+
+label(71),
+    get_atom(<,0),
+    get_integer(2,1),
+    proceed,
+
+label(72),
+    retry_me_else(74),
+
+label(73),
+    get_atom(>,0),
+    get_integer(2,1),
+    proceed,
+
+label(74),
+    retry_me_else(76),
+
+label(75),
+    get_atom(=\=,0),
+    get_integer(2,1),
+    proceed,
+
+label(76),
+    retry_me_else(78),
+
+label(77),
+    get_atom(=:=,0),
+    get_integer(2,1),
+    proceed,
+
+label(78),
+    retry_me_else(80),
+
+label(79),
+    get_atom(is,0),
+    get_integer(2,1),
+    proceed,
+
+label(80),
+    retry_me_else(82),
+
+label(81),
+    get_atom(=<,0),
+    get_integer(2,1),
+    proceed,
+
+label(82),
+    retry_me_else(84),
+
+label(83),
+    get_atom(retractall,0),
+    get_integer(1,1),
+    proceed,
+
+label(84),
+    retry_me_else(86),
+
+label(85),
+    get_atom(assertz,0),
+    get_integer(1,1),
+    proceed,
+
+label(86),
+    retry_me_else(88),
+
+label(87),
+    get_atom(asserta,0),
+    get_integer(1,1),
+    proceed,
+
+label(88),
+    retry_me_else(90),
+
+label(89),
+    get_atom(retract,0),
+    get_integer(1,1),
+    proceed,
+
+label(90),
+    retry_me_else(92),
+
+label(91),
+    get_atom(abolish,0),
+    get_integer(1,1),
+    proceed,
+
+label(92),
+    retry_me_else(94),
+
+label(93),
+    get_atom(clause,0),
+    get_integer(2,1),
+    proceed,
+
+label(94),
+    retry_me_else(96),
+
+label(95),
+    get_atom(char_code,0),
+    get_integer(2,1),
+    proceed,
+
+label(96),
+    retry_me_else(98),
+
+label(97),
+    get_atom(lower_upper,0),
+    get_integer(2,1),
+    proceed,
+
+label(98),
+    retry_me_else(100),
+
+label(99),
+    get_atom(current_atom,0),
+    get_integer(1,1),
+    proceed,
+
+label(100),
+    retry_me_else(102),
+
+label(101),
+    get_atom(name,0),
+    get_integer(2,1),
+    proceed,
+
+label(102),
+    retry_me_else(104),
+
+label(103),
+    get_atom(number_codes,0),
+    get_integer(2,1),
+    proceed,
+
+label(104),
+    retry_me_else(106),
+
+label(105),
+    get_atom(atom_codes,0),
+    get_integer(2,1),
+    proceed,
+
+label(106),
+    retry_me_else(108),
+
+label(107),
+    get_atom(atom_length,0),
+    get_integer(2,1),
+    proceed,
+
+label(108),
+    retry_me_else(110),
+
+label(109),
+    get_atom(atom_property,0),
+    get_integer(2,1),
+    proceed,
+
+label(110),
+    retry_me_else(112),
+
+label(111),
+    get_atom(number_chars,0),
+    get_integer(2,1),
+    proceed,
+
+label(112),
+    retry_me_else(114),
+
+label(113),
+    get_atom(new_atom,0),
+    get_integer(1,1),
+    proceed,
+
+label(114),
+    retry_me_else(116),
+
+label(115),
+    get_atom(new_atom,0),
+    get_integer(2,1),
+    proceed,
+
+label(116),
+    retry_me_else(118),
+
+label(117),
+    get_atom(new_atom,0),
+    get_integer(3,1),
+    proceed,
+
+label(118),
+    retry_me_else(120),
+
+label(119),
+    get_atom(number_atom,0),
+    get_integer(2,1),
+    proceed,
+
+label(120),
+    retry_me_else(122),
+
+label(121),
+    get_atom(atom_chars,0),
+    get_integer(2,1),
+    proceed,
+
+label(122),
+    retry_me_else(124),
+
+label(123),
+    get_atom(atom_concat,0),
+    get_integer(3,1),
+    proceed,
+
+label(124),
+    retry_me_else(126),
+
+label(125),
+    get_atom(atom_hash,0),
+    get_integer(2,1),
+    proceed,
+
+label(126),
+    retry_me_else(128),
+
+label(127),
+    get_atom(sub_atom,0),
+    get_integer(5,1),
+    proceed,
+
+label(128),
+    retry_me_else(130),
+
+label(129),
+    get_atom(call_det,0),
+    get_integer(2,1),
+    proceed,
+
+label(130),
+    retry_me_else(132),
+
+label(131),
+    get_atom(once,0),
+    get_integer(1,1),
+    proceed,
+
+label(132),
+    retry_me_else(134),
+
+label(133),
+    get_atom(\+,0),
+    get_integer(1,1),
+    proceed,
+
+label(134),
+    retry_me_else(136),
+
+label(135),
+    get_atom(call,0),
+    get_integer(2,1),
+    proceed,
+
+label(136),
+    retry_me_else(138),
+
+label(137),
+    get_atom(call,0),
+    get_integer(3,1),
+    proceed,
+
+label(138),
+    retry_me_else(140),
+
+label(139),
+    get_atom(call,0),
+    get_integer(4,1),
+    proceed,
+
+label(140),
+    retry_me_else(142),
+
+label(141),
+    get_atom(call,0),
+    get_integer(5,1),
+    proceed,
+
+label(142),
+    retry_me_else(144),
+
+label(143),
+    get_atom(call,0),
+    get_integer(6,1),
+    proceed,
+
+label(144),
+    retry_me_else(146),
+
+label(145),
+    get_atom(call,0),
+    get_integer(7,1),
+    proceed,
+
+label(146),
+    retry_me_else(148),
+
+label(147),
+    get_atom(call,0),
+    get_integer(8,1),
+    proceed,
+
+label(148),
+    retry_me_else(150),
+
+label(149),
+    get_atom(call,0),
+    get_integer(9,1),
+    proceed,
+
+label(150),
+    retry_me_else(152),
+
+label(151),
+    get_atom(call,0),
+    get_integer(10,1),
+    proceed,
+
+label(152),
+    retry_me_else(154),
+
+label(153),
+    get_atom(call,0),
+    get_integer(11,1),
+    proceed,
+
+label(154),
+    retry_me_else(156),
+
+label(155),
+    get_atom(call_with_args,0),
+    get_integer(1,1),
+    proceed,
+
+label(156),
+    retry_me_else(158),
+
+label(157),
+    get_atom(call_with_args,0),
+    get_integer(2,1),
+    proceed,
+
+label(158),
+    retry_me_else(160),
+
+label(159),
+    get_atom(call_with_args,0),
+    get_integer(3,1),
+    proceed,
+
+label(160),
+    retry_me_else(162),
+
+label(161),
+    get_atom(call_with_args,0),
+    get_integer(4,1),
+    proceed,
+
+label(162),
+    retry_me_else(164),
+
+label(163),
+    get_atom(call_with_args,0),
+    get_integer(5,1),
+    proceed,
+
+label(164),
+    retry_me_else(166),
+
+label(165),
+    get_atom(call_with_args,0),
+    get_integer(6,1),
+    proceed,
+
+label(166),
+    retry_me_else(168),
+
+label(167),
+    get_atom(call_with_args,0),
+    get_integer(7,1),
+    proceed,
+
+label(168),
+    retry_me_else(170),
+
+label(169),
+    get_atom(call_with_args,0),
+    get_integer(8,1),
+    proceed,
+
+label(170),
+    retry_me_else(172),
+
+label(171),
+    get_atom(call_with_args,0),
+    get_integer(9,1),
+    proceed,
+
+label(172),
+    retry_me_else(174),
+
+label(173),
+    get_atom(call_with_args,0),
+    get_integer(10,1),
+    proceed,
+
+label(174),
+    retry_me_else(176),
+
+label(175),
+    get_atom(call_with_args,0),
+    get_integer(11,1),
+    proceed,
+
+label(176),
+    retry_me_else(178),
+
+label(177),
+    get_atom(get_char,0),
+    get_integer(1,1),
+    proceed,
+
+label(178),
+    retry_me_else(180),
+
+label(179),
+    get_atom(get_char,0),
+    get_integer(2,1),
+    proceed,
+
+label(180),
+    retry_me_else(182),
+
+label(181),
+    get_atom(get_code,0),
+    get_integer(1,1),
+    proceed,
+
+label(182),
+    retry_me_else(184),
+
+label(183),
+    get_atom(get_code,0),
+    get_integer(2,1),
+    proceed,
+
+label(184),
+    retry_me_else(186),
+
+label(185),
+    get_atom(unget_byte,0),
+    get_integer(1,1),
+    proceed,
+
+label(186),
+    retry_me_else(188),
+
+label(187),
+    get_atom(unget_byte,0),
+    get_integer(2,1),
+    proceed,
+
+label(188),
+    retry_me_else(190),
+
+label(189),
+    get_atom(put_char,0),
+    get_integer(1,1),
+    proceed,
+
+label(190),
+    retry_me_else(192),
+
+label(191),
+    get_atom(put_char,0),
+    get_integer(2,1),
+    proceed,
+
+label(192),
+    retry_me_else(194),
+
+label(193),
+    get_atom(get_key,0),
+    get_integer(1,1),
+    proceed,
+
+label(194),
+    retry_me_else(196),
+
+label(195),
+    get_atom(get_key,0),
+    get_integer(2,1),
+    proceed,
+
+label(196),
+    retry_me_else(198),
+
+label(197),
+    get_atom(peek_code,0),
+    get_integer(1,1),
+    proceed,
+
+label(198),
+    retry_me_else(200),
+
+label(199),
+    get_atom(peek_code,0),
+    get_integer(2,1),
+    proceed,
+
+label(200),
+    retry_me_else(202),
+
+label(201),
+    get_atom(put_code,0),
+    get_integer(1,1),
+    proceed,
+
+label(202),
+    retry_me_else(204),
+
+label(203),
+    get_atom(put_code,0),
+    get_integer(2,1),
+    proceed,
+
+label(204),
+    retry_me_else(206),
+
+label(205),
+    get_atom(peek_char,0),
+    get_integer(1,1),
+    proceed,
+
+label(206),
+    retry_me_else(208),
+
+label(207),
+    get_atom(peek_char,0),
+    get_integer(2,1),
+    proceed,
+
+label(208),
+    retry_me_else(210),
+
+label(209),
+    get_atom(get_byte,0),
+    get_integer(1,1),
+    proceed,
+
+label(210),
+    retry_me_else(212),
+
+label(211),
+    get_atom(get_byte,0),
+    get_integer(2,1),
+    proceed,
+
+label(212),
+    retry_me_else(214),
+
+label(213),
+    get_atom(unget_char,0),
+    get_integer(1,1),
+    proceed,
+
+label(214),
+    retry_me_else(216),
+
+label(215),
+    get_atom(unget_char,0),
+    get_integer(2,1),
+    proceed,
+
+label(216),
+    retry_me_else(218),
+
+label(217),
+    get_atom(unget_code,0),
+    get_integer(1,1),
+    proceed,
+
+label(218),
+    retry_me_else(220),
+
+label(219),
+    get_atom(unget_code,0),
+    get_integer(2,1),
+    proceed,
+
+label(220),
+    retry_me_else(222),
+
+label(221),
+    get_atom(peek_byte,0),
+    get_integer(1,1),
+    proceed,
+
+label(222),
+    retry_me_else(224),
+
+label(223),
+    get_atom(peek_byte,0),
+    get_integer(2,1),
+    proceed,
+
+label(224),
+    retry_me_else(226),
+
+label(225),
+    get_atom(put_byte,0),
+    get_integer(1,1),
+    proceed,
+
+label(226),
+    retry_me_else(228),
+
+label(227),
+    get_atom(put_byte,0),
+    get_integer(2,1),
+    proceed,
+
+label(228),
+    retry_me_else(230),
+
+label(229),
+    get_atom(get_key_no_echo,0),
+    get_integer(1,1),
+    proceed,
+
+label(230),
+    retry_me_else(232),
+
+label(231),
+    get_atom(get_key_no_echo,0),
+    get_integer(2,1),
+    proceed,
+
+label(232),
+    retry_me_else(234),
+
+label(233),
+    get_atom(write_canonical_to_atom,0),
+    get_integer(2,1),
+    proceed,
+
+label(234),
+    retry_me_else(236),
+
+label(235),
+    get_atom(write_term_to_chars,0),
+    get_integer(3,1),
+    proceed,
+
+label(236),
+    retry_me_else(238),
+
+label(237),
+    get_atom(write_term_to_codes,0),
+    get_integer(3,1),
+    proceed,
+
+label(238),
+    retry_me_else(240),
+
+label(239),
+    get_atom(write_to_atom,0),
+    get_integer(2,1),
+    proceed,
+
+label(240),
+    retry_me_else(242),
+
+label(241),
+    get_atom(display_to_atom,0),
+    get_integer(2,1),
+    proceed,
+
+label(242),
+    retry_me_else(244),
+
+label(243),
+    get_atom(display_to_codes,0),
+    get_integer(2,1),
+    proceed,
+
+label(244),
+    retry_me_else(246),
+
+label(245),
+    get_atom(read_term_from_atom,0),
+    get_integer(3,1),
+    proceed,
+
+label(246),
+    retry_me_else(248),
+
+label(247),
+    get_atom(print_to_atom,0),
+    get_integer(2,1),
+    proceed,
+
+label(248),
+    retry_me_else(250),
+
+label(249),
+    get_atom(read_term_from_codes,0),
+    get_integer(3,1),
+    proceed,
+
+label(250),
+    retry_me_else(252),
+
+label(251),
+    get_atom(write_term_to_atom,0),
+    get_integer(3,1),
+    proceed,
+
+label(252),
+    retry_me_else(254),
+
+label(253),
+    get_atom(write_to_codes,0),
+    get_integer(2,1),
+    proceed,
+
+label(254),
+    retry_me_else(256),
+
+label(255),
+    get_atom(display_to_chars,0),
+    get_integer(2,1),
+    proceed,
+
+label(256),
+    retry_me_else(258),
+
+label(257),
+    get_atom(print_to_codes,0),
+    get_integer(2,1),
+    proceed,
+
+label(258),
+    retry_me_else(260),
+
+label(259),
+    get_atom(read_token_from_atom,0),
+    get_integer(2,1),
+    proceed,
+
+label(260),
+    retry_me_else(262),
+
+label(261),
+    get_atom(read_token_from_chars,0),
+    get_integer(2,1),
+    proceed,
+
+label(262),
+    retry_me_else(264),
+
+label(263),
+    get_atom(read_from_atom,0),
+    get_integer(2,1),
+    proceed,
+
+label(264),
+    retry_me_else(266),
+
+label(265),
+    get_atom(read_from_codes,0),
+    get_integer(2,1),
+    proceed,
+
+label(266),
+    retry_me_else(268),
+
+label(267),
+    get_atom(read_from_chars,0),
+    get_integer(2,1),
+    proceed,
+
+label(268),
+    retry_me_else(270),
+
+label(269),
+    get_atom(write_canonical_to_codes,0),
+    get_integer(2,1),
+    proceed,
+
+label(270),
+    retry_me_else(272),
+
+label(271),
+    get_atom(write_to_chars,0),
+    get_integer(2,1),
+    proceed,
+
+label(272),
+    retry_me_else(274),
+
+label(273),
+    get_atom(print_to_chars,0),
+    get_integer(2,1),
+    proceed,
+
+label(274),
+    retry_me_else(276),
+
+label(275),
+    get_atom(read_token_from_codes,0),
+    get_integer(2,1),
+    proceed,
+
+label(276),
+    retry_me_else(278),
+
+label(277),
+    get_atom(write_canonical_to_chars,0),
+    get_integer(2,1),
+    proceed,
+
+label(278),
+    retry_me_else(280),
+
+label(279),
+    get_atom(writeq_to_atom,0),
+    get_integer(2,1),
+    proceed,
+
+label(280),
+    retry_me_else(282),
+
+label(281),
+    get_atom(writeq_to_codes,0),
+    get_integer(2,1),
+    proceed,
+
+label(282),
+    retry_me_else(284),
+
+label(283),
+    get_atom(writeq_to_chars,0),
+    get_integer(2,1),
+    proceed,
+
+label(284),
+    retry_me_else(286),
+
+label(285),
+    get_atom(read_term_from_chars,0),
+    get_integer(3,1),
+    proceed,
+
+label(286),
+    retry_me_else(288),
+
+label(287),
+    get_atom(format_to_atom,0),
+    get_integer(3,1),
+    proceed,
+
+label(288),
+    retry_me_else(290),
+
+label(289),
+    get_atom(format_to_codes,0),
+    get_integer(3,1),
+    proceed,
+
+label(290),
+    retry_me_else(292),
+
+label(291),
+    get_atom(format_to_chars,0),
+    get_integer(3,1),
+    proceed,
+
+label(292),
+    retry_me_else(294),
+
+label(293),
+    get_atom('.',0),
+    get_integer(2,1),
+    proceed,
+
+label(294),
+    retry_me_else(296),
+
+label(295),
+    get_atom(consult,0),
+    get_integer(1,1),
+    proceed,
+
+label(296),
+    retry_me_else(298),
+
+label(297),
+    get_atom(listing,0),
+    get_integer(0,1),
+    proceed,
+
+label(298),
+    retry_me_else(300),
+
+label(299),
+    get_atom(listing,0),
+    get_integer(1,1),
+    proceed,
+
+label(300),
+    retry_me_else(302),
+
+label(301),
+    get_atom(load,0),
+    get_integer(1,1),
+    proceed,
+
+label(302),
+    retry_me_else(304),
+
+label(303),
+    get_atom(abort,0),
+    get_integer(0,1),
+    proceed,
+
+label(304),
+    retry_me_else(306),
+
+label(305),
+    get_atom(repeat,0),
+    get_integer(0,1),
+    proceed,
+
+label(306),
+    retry_me_else(308),
+
+label(307),
+    get_atom(stop,0),
+    get_integer(0,1),
+    proceed,
+
+label(308),
+    retry_me_else(310),
+
+label(309),
+    get_atom(halt,0),
+    get_integer(0,1),
+    proceed,
+
+label(310),
+    retry_me_else(312),
+
+label(311),
+    get_atom(halt,0),
+    get_integer(1,1),
+    proceed,
+
+label(312),
+    retry_me_else(314),
+
+label(313),
+    get_atom(for,0),
+    get_integer(3,1),
+    proceed,
+
+label(314),
+    retry_me_else(316),
+
+label(315),
+    get_atom(spypoint_condition,0),
+    get_integer(3,1),
+    proceed,
+
+label(316),
+    retry_me_else(318),
+
+label(317),
+    get_atom(nospy,0),
+    get_integer(1,1),
+    proceed,
+
+label(318),
+    retry_me_else(320),
+
+label(319),
+    get_atom(notrace,0),
+    get_integer(0,1),
+    proceed,
+
+label(320),
+    retry_me_else(322),
+
+label(321),
+    get_atom(debugging,0),
+    get_integer(0,1),
+    proceed,
+
+label(322),
+    retry_me_else(324),
+
+label(323),
+    get_atom(spy,0),
+    get_integer(1,1),
+    proceed,
+
+label(324),
+    retry_me_else(326),
+
+label(325),
+    get_atom(leash,0),
+    get_integer(1,1),
+    proceed,
+
+label(326),
+    retry_me_else(328),
+
+label(327),
+    get_atom(wam_debug,0),
+    get_integer(0,1),
+    proceed,
+
+label(328),
+    retry_me_else(330),
+
+label(329),
+    get_atom(nodebug,0),
+    get_integer(0,1),
+    proceed,
+
+label(330),
+    retry_me_else(332),
+
+label(331),
+    get_atom(trace,0),
+    get_integer(0,1),
+    proceed,
+
+label(332),
+    retry_me_else(334),
+
+label(333),
+    get_atom(debug,0),
+    get_integer(0,1),
+    proceed,
+
+label(334),
+    retry_me_else(336),
+
+label(335),
+    get_atom(nospyall,0),
+    get_integer(0,1),
+    proceed,
+
+label(336),
+    retry_me_else(338),
+
+label(337),
+    get_atom(told,0),
+    get_integer(0,1),
+    proceed,
+
+label(338),
+    retry_me_else(340),
+
+label(339),
+    get_atom(tab,0),
+    get_integer(1,1),
+    proceed,
+
+label(340),
+    retry_me_else(342),
+
+label(341),
+    get_atom(put,0),
+    get_integer(1,1),
+    proceed,
+
+label(342),
+    retry_me_else(344),
+
+label(343),
+    get_atom(seeing,0),
+    get_integer(1,1),
+    proceed,
+
+label(344),
+    retry_me_else(346),
+
+label(345),
+    get_atom(tell,0),
+    get_integer(1,1),
+    proceed,
+
+label(346),
+    retry_me_else(348),
+
+label(347),
+    get_atom(seen,0),
+    get_integer(0,1),
+    proceed,
+
+label(348),
+    retry_me_else(350),
+
+label(349),
+    get_atom(see,0),
+    get_integer(1,1),
+    proceed,
+
+label(350),
+    retry_me_else(352),
+
+label(351),
+    get_atom(append,0),
+    get_integer(1,1),
+    proceed,
+
+label(352),
+    retry_me_else(354),
+
+label(353),
+    get_atom(telling,0),
+    get_integer(1,1),
+    proceed,
+
+label(354),
+    retry_me_else(356),
+
+label(355),
+    get_atom(skip,0),
+    get_integer(1,1),
+    proceed,
+
+label(356),
+    retry_me_else(358),
+
+label(357),
+    get_atom(get,0),
+    get_integer(1,1),
+    proceed,
+
+label(358),
+    retry_me_else(360),
+
+label(359),
+    get_atom(get0,0),
+    get_integer(1,1),
+    proceed,
+
+label(360),
+    retry_me_else(362),
+
+label(361),
+    get_atom(expand_term,0),
+    get_integer(2,1),
+    proceed,
+
+label(362),
+    retry_me_else(364),
+
+label(363),
+    get_atom(phrase,0),
+    get_integer(2,1),
+    proceed,
+
+label(364),
+    retry_me_else(366),
+
+label(365),
+    get_atom(phrase,0),
+    get_integer(3,1),
+    proceed,
+
+label(366),
+    retry_me_else(368),
+
+label(367),
+    get_atom(decompose_file_name,0),
+    get_integer(4,1),
+    proceed,
+
+label(368),
+    retry_me_else(370),
+
+label(369),
+    get_atom(absolute_file_name,0),
+    get_integer(2,1),
+    proceed,
+
+label(370),
+    retry_me_else(372),
+
+label(371),
+    get_atom(prolog_file_name,0),
+    get_integer(2,1),
+    proceed,
+
+label(372),
+    retry_me_else(374),
+
+label(373),
+    get_atom(read_pl_state_file,0),
+    get_integer(1,1),
+    proceed,
+
+label(374),
+    retry_me_else(376),
+
+label(375),
+    get_atom(argument_counter,0),
+    get_integer(1,1),
+    proceed,
+
+label(376),
+    retry_me_else(378),
+
+label(377),
+    get_atom(write_pl_state_file,0),
+    get_integer(1,1),
+    proceed,
+
+label(378),
+    retry_me_else(380),
+
+label(379),
+    get_atom(argument_value,0),
+    get_integer(2,1),
+    proceed,
+
+label(380),
+    retry_me_else(382),
+
+label(381),
+    get_atom(set_prolog_flag,0),
+    get_integer(2,1),
+    proceed,
+
+label(382),
+    retry_me_else(384),
+
+label(383),
+    get_atom(current_prolog_flag,0),
+    get_integer(2,1),
+    proceed,
+
+label(384),
+    retry_me_else(386),
+
+label(385),
+    get_atom(argument_list,0),
+    get_integer(1,1),
+    proceed,
+
+label(386),
+    retry_me_else(388),
+
+label(387),
+    get_atom(environ,0),
+    get_integer(2,1),
+    proceed,
+
+label(388),
+    retry_me_else(390),
+
+label(389),
+    get_atom(format,0),
+    get_integer(2,1),
+    proceed,
+
+label(390),
+    retry_me_else(392),
+
+label(391),
+    get_atom(format,0),
+    get_integer(3,1),
+    proceed,
+
+label(392),
+    retry_me_else(394),
+
+label(393),
+    get_atom(g_test_set_bit,0),
+    get_integer(2,1),
+    proceed,
+
+label(394),
+    retry_me_else(396),
+
+label(395),
+    get_atom(g_inc,0),
+    get_integer(1,1),
+    proceed,
+
+label(396),
+    retry_me_else(398),
+
+label(397),
+    get_atom(g_inc,0),
+    get_integer(2,1),
+    proceed,
+
+label(398),
+    retry_me_else(400),
+
+label(399),
+    get_atom(g_inc,0),
+    get_integer(3,1),
+    proceed,
+
+label(400),
+    retry_me_else(402),
+
+label(401),
+    get_atom(g_deco,0),
+    get_integer(2,1),
+    proceed,
+
+label(402),
+    retry_me_else(404),
+
+label(403),
+    get_atom(g_assign,0),
+    get_integer(2,1),
+    proceed,
+
+label(404),
+    retry_me_else(406),
+
+label(405),
+    get_atom(g_assignb,0),
+    get_integer(2,1),
+    proceed,
+
+label(406),
+    retry_me_else(408),
+
+label(407),
+    get_atom(g_set_bit,0),
+    get_integer(2,1),
+    proceed,
+
+label(408),
+    retry_me_else(410),
+
+label(409),
+    get_atom(g_inco,0),
+    get_integer(2,1),
+    proceed,
+
+label(410),
+    retry_me_else(412),
+
+label(411),
+    get_atom(g_test_reset_bit,0),
+    get_integer(2,1),
+    proceed,
+
+label(412),
+    retry_me_else(414),
+
+label(413),
+    get_atom(g_reset_bit,0),
+    get_integer(2,1),
+    proceed,
+
+label(414),
+    retry_me_else(416),
+
+label(415),
+    get_atom(g_dec,0),
+    get_integer(1,1),
+    proceed,
+
+label(416),
+    retry_me_else(418),
+
+label(417),
+    get_atom(g_dec,0),
+    get_integer(2,1),
+    proceed,
+
+label(418),
+    retry_me_else(420),
+
+label(419),
+    get_atom(g_dec,0),
+    get_integer(3,1),
+    proceed,
+
+label(420),
+    retry_me_else(422),
+
+label(421),
+    get_atom(g_array_size,0),
+    get_integer(2,1),
+    proceed,
+
+label(422),
+    retry_me_else(424),
+
+label(423),
+    get_atom(g_read,0),
+    get_integer(2,1),
+    proceed,
+
+label(424),
+    retry_me_else(426),
+
+label(425),
+    get_atom(g_link,0),
+    get_integer(2,1),
+    proceed,
+
+label(426),
+    retry_me_else(428),
+
+label(427),
+    get_atom(add_linedit_completion,0),
+    get_integer(1,1),
+    proceed,
+
+label(428),
+    retry_me_else(430),
+
+label(429),
+    get_atom(find_linedit_completion,0),
+    get_integer(2,1),
+    proceed,
+
+label(430),
+    retry_me_else(432),
+
+label(431),
+    get_atom(get_linedit_prompt,0),
+    get_integer(1,1),
+    proceed,
+
+label(432),
+    retry_me_else(434),
+
+label(433),
+    get_atom(set_linedit_prompt,0),
+    get_integer(1,1),
+    proceed,
+
+label(434),
+    retry_me_else(436),
+
+label(435),
+    get_atom(reverse,0),
+    get_integer(2,1),
+    proceed,
+
+label(436),
+    retry_me_else(438),
+
+label(437),
+    get_atom(nth,0),
+    get_integer(3,1),
+    proceed,
+
+label(438),
+    retry_me_else(440),
+
+label(439),
+    get_atom(min_list,0),
+    get_integer(2,1),
+    proceed,
+
+label(440),
+    retry_me_else(442),
+
+label(441),
+    get_atom(permutation,0),
+    get_integer(2,1),
+    proceed,
+
+label(442),
+    retry_me_else(444),
+
+label(443),
+    get_atom(sum_list,0),
+    get_integer(2,1),
+    proceed,
+
+label(444),
+    retry_me_else(446),
+
+label(445),
+    get_atom(prefix,0),
+    get_integer(2,1),
+    proceed,
+
+label(446),
+    retry_me_else(448),
+
+label(447),
+    get_atom(last,0),
+    get_integer(2,1),
+    proceed,
+
+label(448),
+    retry_me_else(450),
+
+label(449),
+    get_atom(suffix,0),
+    get_integer(2,1),
+    proceed,
+
+label(450),
+    retry_me_else(452),
+
+label(451),
+    get_atom(sublist,0),
+    get_integer(2,1),
+    proceed,
+
+label(452),
+    retry_me_else(454),
+
+label(453),
+    get_atom(select,0),
+    get_integer(3,1),
+    proceed,
+
+label(454),
+    retry_me_else(456),
+
+label(455),
+    get_atom(append,0),
+    get_integer(3,1),
+    proceed,
+
+label(456),
+    retry_me_else(458),
+
+label(457),
+    get_atom(delete,0),
+    get_integer(3,1),
+    proceed,
+
+label(458),
+    retry_me_else(460),
+
+label(459),
+    get_atom(memberchk,0),
+    get_integer(2,1),
+    proceed,
+
+label(460),
+    retry_me_else(462),
+
+label(461),
+    get_atom(length,0),
+    get_integer(2,1),
+    proceed,
+
+label(462),
+    retry_me_else(464),
+
+label(463),
+    get_atom(member,0),
+    get_integer(2,1),
+    proceed,
+
+label(464),
+    retry_me_else(466),
+
+label(465),
+    get_atom(max_list,0),
+    get_integer(2,1),
+    proceed,
+
+label(466),
+    retry_me_else(468),
+
+label(467),
+    get_atom(current_op,0),
+    get_integer(3,1),
+    proceed,
+
+label(468),
+    retry_me_else(470),
+
+label(469),
+    get_atom(op,0),
+    get_integer(3,1),
+    proceed,
+
+label(470),
+    retry_me_else(472),
+
+label(471),
+    get_atom(host_name,0),
+    get_integer(1,1),
+    proceed,
+
+label(472),
+    retry_me_else(474),
+
+label(473),
+    get_atom(directory_files,0),
+    get_integer(2,1),
+    proceed,
+
+label(474),
+    retry_me_else(476),
+
+label(475),
+    get_atom(exec,0),
+    get_integer(5,1),
+    proceed,
+
+label(476),
+    retry_me_else(478),
+
+label(477),
+    get_atom(exec,0),
+    get_integer(4,1),
+    proceed,
+
+label(478),
+    retry_me_else(480),
+
+label(479),
+    get_atom(working_directory,0),
+    get_integer(1,1),
+    proceed,
+
+label(480),
+    retry_me_else(482),
+
+label(481),
+    get_atom(file_exists,0),
+    get_integer(1,1),
+    proceed,
+
+label(482),
+    retry_me_else(484),
+
+label(483),
+    get_atom(temporary_file,0),
+    get_integer(3,1),
+    proceed,
+
+label(484),
+    retry_me_else(486),
+
+label(485),
+    get_atom(architecture,0),
+    get_integer(1,1),
+    proceed,
+
+label(486),
+    retry_me_else(488),
+
+label(487),
+    get_atom(wait,0),
+    get_integer(2,1),
+    proceed,
+
+label(488),
+    retry_me_else(490),
+
+label(489),
+    get_atom(delete_file,0),
+    get_integer(1,1),
+    proceed,
+
+label(490),
+    retry_me_else(492),
+
+label(491),
+    get_atom(change_directory,0),
+    get_integer(1,1),
+    proceed,
+
+label(492),
+    retry_me_else(494),
+
+label(493),
+    get_atom(date_time,0),
+    get_integer(1,1),
+    proceed,
+
+label(494),
+    retry_me_else(496),
+
+label(495),
+    get_atom(select,0),
+    get_integer(5,1),
+    proceed,
+
+label(496),
+    retry_me_else(498),
+
+label(497),
+    get_atom(popen,0),
+    get_integer(3,1),
+    proceed,
+
+label(498),
+    retry_me_else(500),
+
+label(499),
+    get_atom(make_directory,0),
+    get_integer(1,1),
+    proceed,
+
+label(500),
+    retry_me_else(502),
+
+label(501),
+    get_atom(system,0),
+    get_integer(1,1),
+    proceed,
+
+label(502),
+    retry_me_else(504),
+
+label(503),
+    get_atom(system,0),
+    get_integer(2,1),
+    proceed,
+
+label(504),
+    retry_me_else(506),
+
+label(505),
+    get_atom(unlink,0),
+    get_integer(1,1),
+    proceed,
+
+label(506),
+    retry_me_else(508),
+
+label(507),
+    get_atom(os_version,0),
+    get_integer(1,1),
+    proceed,
+
+label(508),
+    retry_me_else(510),
+
+label(509),
+    get_atom(create_pipe,0),
+    get_integer(2,1),
+    proceed,
+
+label(510),
+    retry_me_else(512),
+
+label(511),
+    get_atom(file_property,0),
+    get_integer(2,1),
+    proceed,
+
+label(512),
+    retry_me_else(514),
+
+label(513),
+    get_atom(delete_directory,0),
+    get_integer(1,1),
+    proceed,
+
+label(514),
+    retry_me_else(516),
+
+label(515),
+    get_atom(spawn,0),
+    get_integer(2,1),
+    proceed,
+
+label(516),
+    retry_me_else(518),
+
+label(517),
+    get_atom(spawn,0),
+    get_integer(3,1),
+    proceed,
+
+label(518),
+    retry_me_else(520),
+
+label(519),
+    get_atom(sleep,0),
+    get_integer(1,1),
+    proceed,
+
+label(520),
+    retry_me_else(522),
+
+label(521),
+    get_atom(prolog_pid,0),
+    get_integer(1,1),
+    proceed,
+
+label(522),
+    retry_me_else(524),
+
+label(523),
+    get_atom(temporary_name,0),
+    get_integer(2,1),
+    proceed,
+
+label(524),
+    retry_me_else(526),
+
+label(525),
+    get_atom(shell,0),
+    get_integer(0,1),
+    proceed,
+
+label(526),
+    retry_me_else(528),
+
+label(527),
+    get_atom(shell,0),
+    get_integer(1,1),
+    proceed,
+
+label(528),
+    retry_me_else(530),
+
+label(529),
+    get_atom(shell,0),
+    get_integer(2,1),
+    proceed,
+
+label(530),
+    retry_me_else(532),
+
+label(531),
+    get_atom(rename_file,0),
+    get_integer(2,1),
+    proceed,
+
+label(532),
+    retry_me_else(534),
+
+label(533),
+    get_atom(file_permission,0),
+    get_integer(2,1),
+    proceed,
+
+label(534),
+    retry_me_else(536),
+
+label(535),
+    get_atom(send_signal,0),
+    get_integer(2,1),
+    proceed,
+
+label(536),
+    retry_me_else(538),
+
+label(537),
+    get_atom(fork_prolog,0),
+    get_integer(1,1),
+    proceed,
+
+label(538),
+    retry_me_else(540),
+
+label(539),
+    get_atom(current_bip_name,0),
+    get_integer(2,1),
+    proceed,
+
+label(540),
+    retry_me_else(542),
+
+label(541),
+    get_atom(set_bip_name,0),
+    get_integer(2,1),
+    proceed,
+
+label(542),
+    retry_me_else(544),
+
+label(543),
+    get_atom(syntax_error_info,0),
+    get_integer(4,1),
+    proceed,
+
+label(544),
+    retry_me_else(546),
+
+label(545),
+    get_atom(current_predicate,0),
+    get_integer(1,1),
+    proceed,
+
+label(546),
+    retry_me_else(548),
+
+label(547),
+    get_atom(predicate_property,0),
+    get_integer(2,1),
+    proceed,
+
+label(548),
+    retry_me_else(550),
+
+label(549),
+    get_atom(name_query_vars,0),
+    get_integer(2,1),
+    proceed,
+
+label(550),
+    retry_me_else(552),
+
+label(551),
+    get_atom(name_singleton_vars,0),
+    get_integer(1,1),
+    proceed,
+
+label(552),
+    retry_me_else(554),
+
+label(553),
+    get_atom(bind_variables,0),
+    get_integer(2,1),
+    proceed,
+
+label(554),
+    retry_me_else(556),
+
+label(555),
+    get_atom(numbervars,0),
+    get_integer(1,1),
+    proceed,
+
+label(556),
+    retry_me_else(558),
+
+label(557),
+    get_atom(numbervars,0),
+    get_integer(3,1),
+    proceed,
+
+label(558),
+    retry_me_else(560),
+
+label(559),
+    get_atom(portray_clause,0),
+    get_integer(1,1),
+    proceed,
+
+label(560),
+    retry_me_else(562),
+
+label(561),
+    get_atom(portray_clause,0),
+    get_integer(2,1),
+    proceed,
+
+label(562),
+    retry_me_else(564),
+
+label(563),
+    get_atom(get_print_stream,0),
+    get_integer(1,1),
+    proceed,
+
+label(564),
+    retry_me_else(566),
+
+label(565),
+    get_atom(print,0),
+    get_integer(1,1),
+    proceed,
+
+label(566),
+    retry_me_else(568),
+
+label(567),
+    get_atom(print,0),
+    get_integer(2,1),
+    proceed,
+
+label(568),
+    retry_me_else(570),
+
+label(569),
+    get_atom(get_seed,0),
+    get_integer(1,1),
+    proceed,
+
+label(570),
+    retry_me_else(572),
+
+label(571),
+    get_atom(set_seed,0),
+    get_integer(1,1),
+    proceed,
+
+label(572),
+    retry_me_else(574),
+
+label(573),
+    get_atom(randomize,0),
+    get_integer(0,1),
+    proceed,
+
+label(574),
+    retry_me_else(576),
+
+label(575),
+    get_atom(random,0),
+    get_integer(1,1),
+    proceed,
+
+label(576),
+    retry_me_else(578),
+
+label(577),
+    get_atom(random,0),
+    get_integer(3,1),
+    proceed,
+
+label(578),
+    retry_me_else(580),
+
+label(579),
+    get_atom(char_conversion,0),
+    get_integer(2,1),
+    proceed,
+
+label(580),
+    retry_me_else(582),
+
+label(581),
+    get_atom(read_number,0),
+    get_integer(1,1),
+    proceed,
+
+label(582),
+    retry_me_else(584),
+
+label(583),
+    get_atom(read_number,0),
+    get_integer(2,1),
+    proceed,
+
+label(584),
+    retry_me_else(586),
+
+label(585),
+    get_atom(read_token,0),
+    get_integer(1,1),
+    proceed,
+
+label(586),
+    retry_me_else(588),
+
+label(587),
+    get_atom(read_token,0),
+    get_integer(2,1),
+    proceed,
+
+label(588),
+    retry_me_else(590),
+
+label(589),
+    get_atom(read_integer,0),
+    get_integer(1,1),
+    proceed,
+
+label(590),
+    retry_me_else(592),
+
+label(591),
+    get_atom(read_integer,0),
+    get_integer(2,1),
+    proceed,
+
+label(592),
+    retry_me_else(594),
+
+label(593),
+    get_atom(read_term,0),
+    get_integer(2,1),
+    proceed,
+
+label(594),
+    retry_me_else(596),
+
+label(595),
+    get_atom(read_term,0),
+    get_integer(3,1),
+    proceed,
+
+label(596),
+    retry_me_else(598),
+
+label(597),
+    get_atom(current_char_conversion,0),
+    get_integer(2,1),
+    proceed,
+
+label(598),
+    retry_me_else(600),
+
+label(599),
+    get_atom(read_atom,0),
+    get_integer(1,1),
+    proceed,
+
+label(600),
+    retry_me_else(602),
+
+label(601),
+    get_atom(read_atom,0),
+    get_integer(2,1),
+    proceed,
+
+label(602),
+    retry_me_else(604),
+
+label(603),
+    get_atom(read,0),
+    get_integer(1,1),
+    proceed,
+
+label(604),
+    retry_me_else(606),
+
+label(605),
+    get_atom(read,0),
+    get_integer(2,1),
+    proceed,
+
+label(606),
+    retry_me_else(608),
+
+label(607),
+    get_atom(last_read_start_line_column,0),
+    get_integer(2,1),
+    proceed,
+
+label(608),
+    retry_me_else(610),
+
+label(609),
+    get_atom(socket_close,0),
+    get_integer(1,1),
+    proceed,
+
+label(610),
+    retry_me_else(612),
+
+label(611),
+    get_atom(socket_bind,0),
+    get_integer(2,1),
+    proceed,
+
+label(612),
+    retry_me_else(614),
+
+label(613),
+    get_atom(socket_connect,0),
+    get_integer(4,1),
+    proceed,
+
+label(614),
+    retry_me_else(616),
+
+label(615),
+    get_atom(socket,0),
+    get_integer(2,1),
+    proceed,
+
+label(616),
+    retry_me_else(618),
+
+label(617),
+    get_atom(socket_accept,0),
+    get_integer(3,1),
+    proceed,
+
+label(618),
+    retry_me_else(620),
+
+label(619),
+    get_atom(socket_accept,0),
+    get_integer(4,1),
+    proceed,
+
+label(620),
+    retry_me_else(622),
+
+label(621),
+    get_atom(hostname_address,0),
+    get_integer(2,1),
+    proceed,
+
+label(622),
+    retry_me_else(624),
+
+label(623),
+    get_atom(socket_listen,0),
+    get_integer(2,1),
+    proceed,
+
+label(624),
+    retry_me_else(626),
+
+label(625),
+    get_atom(keysort,0),
+    get_integer(2,1),
+    proceed,
+
+label(626),
+    retry_me_else(628),
+
+label(627),
+    get_atom(keysort,0),
+    get_integer(1,1),
+    proceed,
+
+label(628),
+    retry_me_else(630),
+
+label(629),
+    get_atom(sort,0),
+    get_integer(2,1),
+    proceed,
+
+label(630),
+    retry_me_else(632),
+
+label(631),
+    get_atom(sort,0),
+    get_integer(1,1),
+    proceed,
+
+label(632),
+    retry_me_else(634),
+
+label(633),
+    get_atom(sort0,0),
+    get_integer(2,1),
+    proceed,
+
+label(634),
+    retry_me_else(636),
+
+label(635),
+    get_atom(sort0,0),
+    get_integer(1,1),
+    proceed,
+
+label(636),
+    retry_me_else(638),
+
+label(637),
+    get_atom(sr_change_options,0),
+    get_integer(2,1),
+    proceed,
+
+label(638),
+    retry_me_else(640),
+
+label(639),
+    get_atom(sr_get_size_counters,0),
+    get_integer(3,1),
+    proceed,
+
+label(640),
+    retry_me_else(642),
+
+label(641),
+    get_atom(sr_open,0),
+    get_integer(3,1),
+    proceed,
+
+label(642),
+    retry_me_else(644),
+
+label(643),
+    get_atom(sr_current_descriptor,0),
+    get_integer(1,1),
+    proceed,
+
+label(644),
+    retry_me_else(646),
+
+label(645),
+    get_atom(sr_get_include_list,0),
+    get_integer(2,1),
+    proceed,
+
+label(646),
+    retry_me_else(648),
+
+label(647),
+    get_atom(sr_get_file_name,0),
+    get_integer(2,1),
+    proceed,
+
+label(648),
+    retry_me_else(650),
+
+label(649),
+    get_atom(sr_write_error,0),
+    get_integer(2,1),
+    proceed,
+
+label(650),
+    retry_me_else(652),
+
+label(651),
+    get_atom(sr_write_error,0),
+    get_integer(4,1),
+    proceed,
+
+label(652),
+    retry_me_else(654),
+
+label(653),
+    get_atom(sr_write_error,0),
+    get_integer(6,1),
+    proceed,
+
+label(654),
+    retry_me_else(656),
+
+label(655),
+    get_atom(sr_close,0),
+    get_integer(1,1),
+    proceed,
+
+label(656),
+    retry_me_else(658),
+
+label(657),
+    get_atom(sr_read_term,0),
+    get_integer(4,1),
+    proceed,
+
+label(658),
+    retry_me_else(660),
+
+label(659),
+    get_atom(sr_error_from_exception,0),
+    get_integer(2,1),
+    proceed,
+
+label(660),
+    retry_me_else(662),
+
+label(661),
+    get_atom(sr_get_error_counters,0),
+    get_integer(3,1),
+    proceed,
+
+label(662),
+    retry_me_else(664),
+
+label(663),
+    get_atom(sr_set_error_counters,0),
+    get_integer(3,1),
+    proceed,
+
+label(664),
+    retry_me_else(666),
+
+label(665),
+    get_atom(sr_get_stream,0),
+    get_integer(2,1),
+    proceed,
+
+label(666),
+    retry_me_else(668),
+
+label(667),
+    get_atom(sr_get_position,0),
+    get_integer(3,1),
+    proceed,
+
+label(668),
+    retry_me_else(670),
+
+label(669),
+    get_atom(sr_get_include_stream_list,0),
+    get_integer(2,1),
+    proceed,
+
+label(670),
+    retry_me_else(672),
+
+label(671),
+    get_atom(sr_new_pass,0),
+    get_integer(1,1),
+    proceed,
+
+label(672),
+    retry_me_else(674),
+
+label(673),
+    get_atom(sr_write_message,0),
+    get_integer(4,1),
+    proceed,
+
+label(674),
+    retry_me_else(676),
+
+label(675),
+    get_atom(sr_write_message,0),
+    get_integer(6,1),
+    proceed,
+
+label(676),
+    retry_me_else(678),
+
+label(677),
+    get_atom(sr_write_message,0),
+    get_integer(8,1),
+    proceed,
+
+label(678),
+    retry_me_else(680),
+
+label(679),
+    get_atom(sr_get_module,0),
+    get_integer(3,1),
+    proceed,
+
+label(680),
+    retry_me_else(682),
+
+label(681),
+    get_atom(system_time,0),
+    get_integer(1,1),
+    proceed,
+
+label(682),
+    retry_me_else(684),
+
+label(683),
+    get_atom(real_time,0),
+    get_integer(1,1),
+    proceed,
+
+label(684),
+    retry_me_else(686),
+
+label(685),
+    get_atom(statistics,0),
+    get_integer(0,1),
+    proceed,
+
+label(686),
+    retry_me_else(688),
+
+label(687),
+    get_atom(statistics,0),
+    get_integer(2,1),
+    proceed,
+
+label(688),
+    retry_me_else(690),
+
+label(689),
+    get_atom(cpu_time,0),
+    get_integer(1,1),
+    proceed,
+
+label(690),
+    retry_me_else(692),
+
+label(691),
+    get_atom(user_time,0),
+    get_integer(1,1),
+    proceed,
+
+label(692),
+    retry_me_else(694),
+
+label(693),
+    get_atom(close,0),
+    get_integer(1,1),
+    proceed,
+
+label(694),
+    retry_me_else(696),
+
+label(695),
+    get_atom(close,0),
+    get_integer(2,1),
+    proceed,
+
+label(696),
+    retry_me_else(698),
+
+label(697),
+    get_atom(stream_line_column,0),
+    get_integer(3,1),
+    proceed,
+
+label(698),
+    retry_me_else(700),
+
+label(699),
+    get_atom(stream_property,0),
+    get_integer(2,1),
+    proceed,
+
+label(700),
+    retry_me_else(702),
+
+label(701),
+    get_atom(open_input_codes_stream,0),
+    get_integer(2,1),
+    proceed,
+
+label(702),
+    retry_me_else(704),
+
+label(703),
+    get_atom(flush_output,0),
+    get_integer(0,1),
+    proceed,
+
+label(704),
+    retry_me_else(706),
+
+label(705),
+    get_atom(flush_output,0),
+    get_integer(1,1),
+    proceed,
+
+label(706),
+    retry_me_else(708),
+
+label(707),
+    get_atom(current_input,0),
+    get_integer(1,1),
+    proceed,
+
+label(708),
+    retry_me_else(710),
+
+label(709),
+    get_atom(seek,0),
+    get_integer(4,1),
+    proceed,
+
+label(710),
+    retry_me_else(712),
+
+label(711),
+    get_atom(set_stream_buffering,0),
+    get_integer(2,1),
+    proceed,
+
+label(712),
+    retry_me_else(714),
+
+label(713),
+    get_atom(open_input_chars_stream,0),
+    get_integer(2,1),
+    proceed,
+
+label(714),
+    retry_me_else(716),
+
+label(715),
+    get_atom(open_output_chars_stream,0),
+    get_integer(1,1),
+    proceed,
+
+label(716),
+    retry_me_else(718),
+
+label(717),
+    get_atom(close_input_chars_stream,0),
+    get_integer(1,1),
+    proceed,
+
+label(718),
+    retry_me_else(720),
+
+label(719),
+    get_atom(stream_position,0),
+    get_integer(2,1),
+    proceed,
+
+label(720),
+    retry_me_else(722),
+
+label(721),
+    get_atom(open_output_atom_stream,0),
+    get_integer(1,1),
+    proceed,
+
+label(722),
+    retry_me_else(724),
+
+label(723),
+    get_atom(close_input_atom_stream,0),
+    get_integer(1,1),
+    proceed,
+
+label(724),
+    retry_me_else(726),
+
+label(725),
+    get_atom(at_end_of_stream,0),
+    get_integer(0,1),
+    proceed,
+
+label(726),
+    retry_me_else(728),
+
+label(727),
+    get_atom(at_end_of_stream,0),
+    get_integer(1,1),
+    proceed,
+
+label(728),
+    retry_me_else(730),
+
+label(729),
+    get_atom(character_count,0),
+    get_integer(2,1),
+    proceed,
+
+label(730),
+    retry_me_else(732),
+
+label(731),
+    get_atom(open_input_atom_stream,0),
+    get_integer(2,1),
+    proceed,
+
+label(732),
+    retry_me_else(734),
+
+label(733),
+    get_atom(set_stream_type,0),
+    get_integer(2,1),
+    proceed,
+
+label(734),
+    retry_me_else(736),
+
+label(735),
+    get_atom(set_output,0),
+    get_integer(1,1),
+    proceed,
+
+label(736),
+    retry_me_else(738),
+
+label(737),
+    get_atom(add_stream_alias,0),
+    get_integer(2,1),
+    proceed,
+
+label(738),
+    retry_me_else(740),
+
+label(739),
+    get_atom(current_stream,0),
+    get_integer(1,1),
+    proceed,
+
+label(740),
+    retry_me_else(742),
+
+label(741),
+    get_atom(set_stream_eof_action,0),
+    get_integer(2,1),
+    proceed,
+
+label(742),
+    retry_me_else(744),
+
+label(743),
+    get_atom(set_input,0),
+    get_integer(1,1),
+    proceed,
+
+label(744),
+    retry_me_else(746),
+
+label(745),
+    get_atom(current_alias,0),
+    get_integer(2,1),
+    proceed,
+
+label(746),
+    retry_me_else(748),
+
+label(747),
+    get_atom(open_output_codes_stream,0),
+    get_integer(1,1),
+    proceed,
+
+label(748),
+    retry_me_else(750),
+
+label(749),
+    get_atom(line_position,0),
+    get_integer(2,1),
+    proceed,
+
+label(750),
+    retry_me_else(752),
+
+label(751),
+    get_atom(current_output,0),
+    get_integer(1,1),
+    proceed,
+
+label(752),
+    retry_me_else(754),
+
+label(753),
+    get_atom(line_count,0),
+    get_integer(2,1),
+    proceed,
+
+label(754),
+    retry_me_else(756),
+
+label(755),
+    get_atom(close_input_codes_stream,0),
+    get_integer(1,1),
+    proceed,
+
+label(756),
+    retry_me_else(758),
+
+label(757),
+    get_atom(open,0),
+    get_integer(3,1),
+    proceed,
+
+label(758),
+    retry_me_else(760),
+
+label(759),
+    get_atom(open,0),
+    get_integer(4,1),
+    proceed,
+
+label(760),
+    retry_me_else(762),
+
+label(761),
+    get_atom(close_output_chars_stream,0),
+    get_integer(2,1),
+    proceed,
+
+label(762),
+    retry_me_else(764),
+
+label(763),
+    get_atom(close_output_codes_stream,0),
+    get_integer(2,1),
+    proceed,
+
+label(764),
+    retry_me_else(766),
+
+label(765),
+    get_atom(set_stream_line_column,0),
+    get_integer(3,1),
+    proceed,
+
+label(766),
+    retry_me_else(768),
+
+label(767),
+    get_atom(set_stream_position,0),
+    get_integer(2,1),
+    proceed,
+
+label(768),
+    retry_me_else(770),
+
+label(769),
+    get_atom(close_output_atom_stream,0),
+    get_integer(2,1),
+    proceed,
+
+label(770),
+    retry_me_else(772),
+
+label(771),
+    get_atom(current_mirror,0),
+    get_integer(2,1),
+    proceed,
+
+label(772),
+    retry_me_else(774),
+
+label(773),
+    get_atom(add_stream_mirror,0),
+    get_integer(2,1),
+    proceed,
+
+label(774),
+    retry_me_else(776),
+
+label(775),
+    get_atom(remove_stream_mirror,0),
+    get_integer(2,1),
+    proceed,
+
+label(776),
+    retry_me_else(778),
+
+label(777),
+    get_atom(==,0),
+    get_integer(2,1),
+    proceed,
+
+label(778),
+    retry_me_else(780),
+
+label(779),
+    get_atom(functor,0),
+    get_integer(3,1),
+    proceed,
+
+label(780),
+    retry_me_else(782),
+
+label(781),
+    get_atom(@>,0),
+    get_integer(2,1),
+    proceed,
+
+label(782),
+    retry_me_else(784),
+
+label(783),
+    get_atom(setarg,0),
+    get_integer(3,1),
+    proceed,
+
+label(784),
+    retry_me_else(786),
+
+label(785),
+    get_atom(setarg,0),
+    get_integer(4,1),
+    proceed,
+
+label(786),
+    retry_me_else(788),
+
+label(787),
+    get_atom(=..,0),
+    get_integer(2,1),
+    proceed,
+
+label(788),
+    retry_me_else(790),
+
+label(789),
+    get_atom(copy_term,0),
+    get_integer(2,1),
+    proceed,
+
+label(790),
+    retry_me_else(792),
+
+label(791),
+    get_atom(term_ref,0),
+    get_integer(2,1),
+    proceed,
+
+label(792),
+    retry_me_else(794),
+
+label(793),
+    get_atom(compare,0),
+    get_integer(3,1),
+    proceed,
+
+label(794),
+    retry_me_else(796),
+
+label(795),
+    get_atom(@=<,0),
+    get_integer(2,1),
+    proceed,
+
+label(796),
+    retry_me_else(798),
+
+label(797),
+    get_atom(\==,0),
+    get_integer(2,1),
+    proceed,
+
+label(798),
+    retry_me_else(800),
+
+label(799),
+    get_atom(@>=,0),
+    get_integer(2,1),
+    proceed,
+
+label(800),
+    retry_me_else(802),
+
+label(801),
+    get_atom(arg,0),
+    get_integer(3,1),
+    proceed,
+
+label(802),
+    retry_me_else(804),
+
+label(803),
+    get_atom(@<,0),
+    get_integer(2,1),
+    proceed,
+
+label(804),
+    retry_me_else(806),
+
+label(805),
+    get_atom(top_level,0),
+    get_integer(0,1),
+    proceed,
+
+label(806),
+    retry_me_else(808),
+
+label(807),
+    get_atom(break,0),
+    get_integer(0,1),
+    proceed,
+
+label(808),
+    retry_me_else(810),
+
+label(809),
+    get_atom(list_or_partial_list,0),
+    get_integer(1,1),
+    proceed,
+
+label(810),
+    retry_me_else(812),
+
+label(811),
+    get_atom(atomic,0),
+    get_integer(1,1),
+    proceed,
+
+label(812),
+    retry_me_else(814),
+
+label(813),
+    get_atom(number,0),
+    get_integer(1,1),
+    proceed,
+
+label(814),
+    retry_me_else(816),
+
+label(815),
+    get_atom(integer,0),
+    get_integer(1,1),
+    proceed,
+
+label(816),
+    retry_me_else(818),
+
+label(817),
+    get_atom(atom,0),
+    get_integer(1,1),
+    proceed,
+
+label(818),
+    retry_me_else(820),
+
+label(819),
+    get_atom(partial_list,0),
+    get_integer(1,1),
+    proceed,
+
+label(820),
+    retry_me_else(822),
+
+label(821),
+    get_atom(list,0),
+    get_integer(1,1),
+    proceed,
+
+label(822),
+    retry_me_else(824),
+
+label(823),
+    get_atom(var,0),
+    get_integer(1,1),
+    proceed,
+
+label(824),
+    retry_me_else(826),
+
+label(825),
+    get_atom(compound,0),
+    get_integer(1,1),
+    proceed,
+
+label(826),
+    retry_me_else(828),
+
+label(827),
+    get_atom(callable,0),
+    get_integer(1,1),
+    proceed,
+
+label(828),
+    retry_me_else(830),
+
+label(829),
+    get_atom(float,0),
+    get_integer(1,1),
+    proceed,
+
+label(830),
+    retry_me_else(832),
+
+label(831),
+    get_atom(nonvar,0),
+    get_integer(1,1),
+    proceed,
+
+label(832),
+    retry_me_else(834),
+
+label(833),
+    get_atom(\=,0),
+    get_integer(2,1),
+    proceed,
+
+label(834),
+    retry_me_else(836),
+
+label(835),
+    get_atom(=,0),
+    get_integer(2,1),
+    proceed,
+
+label(836),
+    retry_me_else(838),
+
+label(837),
+    get_atom(unify_with_occurs_check,0),
+    get_integer(2,1),
+    proceed,
+
+label(838),
+    retry_me_else(840),
+
+label(839),
+    get_atom(writeq,0),
+    get_integer(1,1),
+    proceed,
+
+label(840),
+    retry_me_else(842),
+
+label(841),
+    get_atom(writeq,0),
+    get_integer(2,1),
+    proceed,
+
+label(842),
+    retry_me_else(844),
+
+label(843),
+    get_atom(write_canonical,0),
+    get_integer(1,1),
+    proceed,
+
+label(844),
+    retry_me_else(846),
+
+label(845),
+    get_atom(write_canonical,0),
+    get_integer(2,1),
+    proceed,
+
+label(846),
+    retry_me_else(848),
+
+label(847),
+    get_atom(display,0),
+    get_integer(1,1),
+    proceed,
+
+label(848),
+    retry_me_else(850),
+
+label(849),
+    get_atom(display,0),
+    get_integer(2,1),
+    proceed,
+
+label(850),
+    retry_me_else(852),
+
+label(851),
+    get_atom(nl,0),
+    get_integer(0,1),
+    proceed,
+
+label(852),
+    retry_me_else(854),
+
+label(853),
+    get_atom(nl,0),
+    get_integer(1,1),
+    proceed,
+
+label(854),
+    retry_me_else(856),
+
+label(855),
+    get_atom(write_term,0),
+    get_integer(2,1),
+    proceed,
+
+label(856),
+    retry_me_else(858),
+
+label(857),
+    get_atom(write_term,0),
+    get_integer(3,1),
+    proceed,
+
+label(858),
+    retry_me_else(860),
+
+label(859),
+    get_atom(write,0),
+    get_integer(1,1),
+    proceed,
+
+label(860),
+    retry_me_else(862),
+
+label(861),
+    get_atom(write,0),
+    get_integer(2,1),
+    proceed,
+
+label(862),
+    retry_me_else(864),
+
+label(863),
+    get_atom(##,0),
+    get_integer(2,1),
+    proceed,
+
+label(864),
+    retry_me_else(866),
+
+label(865),
+    get_atom(fd_at_least_one,0),
+    get_integer(1,1),
+    proceed,
+
+label(866),
+    retry_me_else(868),
+
+label(867),
+    get_atom(#\<=>,0),
+    get_integer(2,1),
+    proceed,
+
+label(868),
+    retry_me_else(870),
+
+label(869),
+    get_atom(#/\,0),
+    get_integer(2,1),
+    proceed,
+
+label(870),
+    retry_me_else(872),
+
+label(871),
+    get_atom(#\==>,0),
+    get_integer(2,1),
+    proceed,
+
+label(872),
+    retry_me_else(874),
+
+label(873),
+    get_atom(fd_only_one,0),
+    get_integer(1,1),
+    proceed,
+
+label(874),
+    retry_me_else(876),
+
+label(875),
+    get_atom(#<=>,0),
+    get_integer(2,1),
+    proceed,
+
+label(876),
+    retry_me_else(878),
+
+label(877),
+    get_atom(#\,0),
+    get_integer(1,1),
+    proceed,
+
+label(878),
+    retry_me_else(880),
+
+label(879),
+    get_atom(#==>,0),
+    get_integer(2,1),
+    proceed,
+
+label(880),
+    retry_me_else(882),
+
+label(881),
+    get_atom(#\/\,0),
+    get_integer(2,1),
+    proceed,
+
+label(882),
+    retry_me_else(884),
+
+label(883),
+    get_atom(fd_at_most_one,0),
+    get_integer(1,1),
+    proceed,
+
+label(884),
+    retry_me_else(886),
+
+label(885),
+    get_atom(fd_cardinality,0),
+    get_integer(2,1),
+    proceed,
+
+label(886),
+    retry_me_else(888),
+
+label(887),
+    get_atom(fd_cardinality,0),
+    get_integer(3,1),
+    proceed,
+
+label(888),
+    retry_me_else(890),
+
+label(889),
+    get_atom(#\/,0),
+    get_integer(2,1),
+    proceed,
+
+label(890),
+    retry_me_else(892),
+
+label(891),
+    get_atom(#\\/,0),
+    get_integer(2,1),
+    proceed,
+
+label(892),
+    retry_me_else(894),
+
+label(893),
+    get_atom(fd_vector_max,0),
+    get_integer(1,1),
+    proceed,
+
+label(894),
+    retry_me_else(896),
+
+label(895),
+    get_atom(fd_size,0),
+    get_integer(2,1),
+    proceed,
+
+label(896),
+    retry_me_else(898),
+
+label(897),
+    get_atom(fd_has_extra_cstr,0),
+    get_integer(1,1),
+    proceed,
+
+label(898),
+    retry_me_else(900),
+
+label(899),
+    get_atom(fd_set_vector_max,0),
+    get_integer(1,1),
+    proceed,
+
+label(900),
+    retry_me_else(902),
+
+label(901),
+    get_atom(fd_min,0),
+    get_integer(2,1),
+    proceed,
+
+label(902),
+    retry_me_else(904),
+
+label(903),
+    get_atom(fd_dom,0),
+    get_integer(2,1),
+    proceed,
+
+label(904),
+    retry_me_else(906),
+
+label(905),
+    get_atom(fd_use_vector,0),
+    get_integer(1,1),
+    proceed,
+
+label(906),
+    retry_me_else(908),
+
+label(907),
+    get_atom(fd_max_integer,0),
+    get_integer(1,1),
+    proceed,
+
+label(908),
+    retry_me_else(910),
+
+label(909),
+    get_atom(fd_has_vector,0),
+    get_integer(1,1),
+    proceed,
+
+label(910),
+    retry_me_else(912),
+
+label(911),
+    get_atom(fd_max,0),
+    get_integer(2,1),
+    proceed,
+
+label(912),
+    retry_me_else(914),
+
+label(913),
+    get_atom(#=,0),
+    get_integer(2,1),
+    proceed,
+
+label(914),
+    retry_me_else(916),
+
+label(915),
+    get_atom(#>,0),
+    get_integer(2,1),
+    proceed,
+
+label(916),
+    retry_me_else(918),
+
+label(917),
+    get_atom(#\=,0),
+    get_integer(2,1),
+    proceed,
+
+label(918),
+    retry_me_else(920),
+
+label(919),
+    get_atom(#=<#,0),
+    get_integer(2,1),
+    proceed,
+
+label(920),
+    retry_me_else(922),
+
+label(921),
+    get_atom(#>=#,0),
+    get_integer(2,1),
+    proceed,
+
+label(922),
+    retry_me_else(924),
+
+label(923),
+    get_atom(#=<,0),
+    get_integer(2,1),
+    proceed,
+
+label(924),
+    retry_me_else(926),
+
+label(925),
+    get_atom(#\=#,0),
+    get_integer(2,1),
+    proceed,
+
+label(926),
+    retry_me_else(928),
+
+label(927),
+    get_atom(#>=,0),
+    get_integer(2,1),
+    proceed,
+
+label(928),
+    retry_me_else(930),
+
+label(929),
+    get_atom(#<#,0),
+    get_integer(2,1),
+    proceed,
+
+label(930),
+    retry_me_else(932),
+
+label(931),
+    get_atom(#=#,0),
+    get_integer(2,1),
+    proceed,
+
+label(932),
+    retry_me_else(934),
+
+label(933),
+    get_atom(#>#,0),
+    get_integer(2,1),
+    proceed,
+
+label(934),
+    retry_me_else(936),
+
+label(935),
+    get_atom(#<,0),
+    get_integer(2,1),
+    proceed,
+
+label(936),
+    retry_me_else(938),
+
+label(937),
+    get_atom(fd_minimize,0),
+    get_integer(2,1),
+    proceed,
+
+label(938),
+    retry_me_else(940),
+
+label(939),
+    get_atom(fd_maximize,0),
+    get_integer(2,1),
+    proceed,
+
+label(940),
+    retry_me_else(942),
+
+label(941),
+    get_atom(fd_prime,0),
+    get_integer(1,1),
+    proceed,
+
+label(942),
+    retry_me_else(944),
+
+label(943),
+    get_atom(fd_not_prime,0),
+    get_integer(1,1),
+    proceed,
+
+label(944),
+    retry_me_else(946),
+
+label(945),
+    get_atom(fd_relation,0),
+    get_integer(2,1),
+    proceed,
+
+label(946),
+    retry_me_else(948),
+
+label(947),
+    get_atom(fd_relationc,0),
+    get_integer(2,1),
+    proceed,
+
+label(948),
+    retry_me_else(950),
+
+label(949),
+    get_atom(fd_all_different,0),
+    get_integer(1,1),
+    proceed,
+
+label(950),
+    retry_me_else(952),
+
+label(951),
+    get_atom(fd_exactly,0),
+    get_integer(3,1),
+    proceed,
+
+label(952),
+    retry_me_else(954),
+
+label(953),
+    get_atom(fd_element_var,0),
+    get_integer(3,1),
+    proceed,
+
+label(954),
+    retry_me_else(956),
+
+label(955),
+    get_atom(fd_atleast,0),
+    get_integer(3,1),
+    proceed,
+
+label(956),
+    retry_me_else(958),
+
+label(957),
+    get_atom(fd_element,0),
+    get_integer(3,1),
+    proceed,
+
+label(958),
+    retry_me_else(960),
+
+label(959),
+    get_atom(fd_atmost,0),
+    get_integer(3,1),
+    proceed,
+
+label(960),
+    retry_me_else(962),
+
+label(961),
+    get_atom(fd_labelingff,0),
+    get_integer(1,1),
+    proceed,
+
+label(962),
+    retry_me_else(964),
+
+label(963),
+    get_atom(fd_domain_bool,0),
+    get_integer(1,1),
+    proceed,
+
+label(964),
+    retry_me_else(966),
+
+label(965),
+    get_atom(fd_domain,0),
+    get_integer(2,1),
+    proceed,
+
+label(966),
+    retry_me_else(968),
+
+label(967),
+    get_atom(fd_domain,0),
+    get_integer(3,1),
+    proceed,
+
+label(968),
+    retry_me_else(970),
+
+label(969),
+    get_atom(fd_labeling,0),
+    get_integer(1,1),
+    proceed,
+
+label(970),
+    retry_me_else(972),
+
+label(971),
+    get_atom(fd_labeling,0),
+    get_integer(2,1),
+    proceed,
+
+label(972),
+    retry_me_else(974),
+
+label(973),
+    get_atom(fd_var,0),
+    get_integer(1,1),
+    proceed,
+
+label(974),
+    retry_me_else(976),
+
+label(975),
+    get_atom(generic_var,0),
+    get_integer(1,1),
+    proceed,
+
+label(976),
+    retry_me_else(978),
+
+label(977),
+    get_atom(non_generic_var,0),
+    get_integer(1,1),
+    proceed,
+
+label(978),
+    trust_me_else_fail,
+
+label(979),
+    get_atom(non_fd_var,0),
+    get_integer(1,1),
+    proceed]).

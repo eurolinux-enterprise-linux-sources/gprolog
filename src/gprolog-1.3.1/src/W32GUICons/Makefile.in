@@ -1,0 +1,39 @@
+DLL_W32GUICONS = @DLL_W32GUICONS@
+CC             = @CC@ @CFLAGS_MACHINE@
+CFLAGS         = @CFLAGS@ -I../EnginePl
+RC             = @RC@
+#RCFLAGS        = @RCFLAGS@ -l 0x409
+RCFLAGS        = @RCFLAGS@
+LD             = @LD@
+LDFLAGS        = @LDFLAGS@
+LDGUILIBS      = @LDGUILIBS@
+
+
+DLLNAME = $(DLL_W32GUICONS)
+OBJDLL  = w32_console@OBJ_SUFFIX@
+RESDLL  = w32_console.res
+
+
+.SUFFIXES:
+.SUFFIXES: @OBJ_SUFFIX@ .cpp .c .res .rc $(SUFFIXES)
+
+.cpp@OBJ_SUFFIX@:
+	$(CC) -c $(CFLAGS) $*.cpp
+
+.c@OBJ_SUFFIX@:
+	$(CC) -c $(CFLAGS) $*.c
+
+.rc.res:
+	$(RC) $(RCFLAGS) @RC_OUT_NAME_OPT@$*.res $*.rc
+
+all: $(DLLNAME) w32gc_interf@OBJ_SUFFIX@
+
+$(DLLNAME): $(OBJDLL) $(RESDLL)
+	$(LD) @LD_DLL_NAME_OPT@ @LD_OUT_NAME_OPT@$(DLLNAME) $(OBJDLL) $(RESDLL) $(LDGUILIBS)
+
+
+
+clean:
+	rm -f *@OBJ_SUFFIX@ *.res *.RES $(DLLNAME) *.lib *.exp *.EXP *.idb *.pdb
+
+distclean: clean

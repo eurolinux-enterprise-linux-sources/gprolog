@@ -1,0 +1,30 @@
+Source: gprolog
+Section: devel
+Priority: optional
+Maintainer: Salvador Abreu <spa@debian.org>
+Standards-Version: 3.5.8.0
+Build-Depends: imagemagick, tetex-bin, tetex-extra, gsfonts, hevea (>= 1.06), texinfo, debhelper (>= 3.0), autoconf (>= 2.52)
+
+Package: gprolog
+Architecture: i386 sparc mips alpha powerpc
+Depends: ${shlibs:Depends}
+Suggests: gprolog-doc
+Conflicts: 
+Description: GNU Prolog compiler
+ GNU Prolog is a free Prolog compiler with constraint solving over finite
+ domains (FD) developed at INRIA by Daniel Diaz.  GNU Prolog is based on two
+ systems developed by the same author (with lot of code rewriting and a lot of
+ new extensions): wamcc and clp(FD).  Much work has been devoted to make it
+ ISO compatible, full compliance being one of its goals.
+
+Package: gprolog-doc
+Architecture: all
+Section: doc
+Conflicts: gprolog (<< 1.2.7)
+Recommends: pdf-viewer, www-browser
+Description: Documentation for the GNU Prolog compiler
+ GNU Prolog is a free Prolog compiler with constraint solving over
+ finite domains (FD) developed at INRIA by Daniel Diaz.
+ .
+ This package contains the documentation (both PDF and HTML) for GNU
+ Prolog.
